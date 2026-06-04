@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<!-- saved from url=(0040)file:///C:/Users/LENOVO/Music/index.html -->
+<html lang="gk"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bike Sales Dashboard</title>
+
+<script src="./Bike Sales Dashboard_files/chart.js.download"></script>
+
+<style>
+body{
+    font-family: times new roman, sans-serif;
+    background:#f4f4f4;
+    margin:0;
+    padding:50px;
+}
+
+h1{
+    text-align:center;
+    color:#333;
+}
+
+.kpi-container{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-bottom:30px;
+}
+
+.card{
+    background:sky shadow;
+    padding:20px;
+    width:220px;
+    text-align:center;
+    border-radius:10px;
+    box-shadow:0 2px 5px rgba(0,0,0,0.2);
+}
+
+.card h2{
+    color:#007bff;
+}
+
+.section{
+    background:light blue;
+    padding:20px;
+    margin-top:20px;
+    border-radius:10px;
+    box-shadow:0 2px 5px rgba(0,0,0,0.2);
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+table,th,td{
+    border:1px solid #ddd;
+}
+
+th,td{
+    padding:10px;
+    text-align:center;
+}
+
+th{
+    background:#007bff;
+    color:dark blue;
+}
+
+canvas{
+    max-width:100%;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Bike Sales Dashboard</h1>
+
+<!-- KPI Cards -->
+<div class="kpi-container">
+
+<div class="card">
+<h3>Total Bikes Sold</h3>
+<h2>12,500</h2>
+</div>
+
+<div class="card">
+<h3>Total Revenue</h3>
+<h2>₹75 Cr</h2>
+</div>
+
+<div class="card">
+<h3>Top Brand</h3>
+<h2>Hero</h2>
+</div>
+
+</div>
+
+<!-- Monthly Sales Chart -->
+<div class="section">
+<h2>Monthly Bike Sales Trend</h2>
+<canvas id="salesChart" width="1182" height="591" style="display: block; box-sizing: border-box; height: 496.8px; width: 993.6px;"></canvas>
+</div>
+
+<!-- Brand Sales -->
+<div class="section">
+<h2>Brand Wise Sales</h2>
+
+<table>
+
+<tbody><tr>
+<th>Brand</th>
+<th>Bikes Sold</th>
+</tr>
+
+<tr>
+<td>Hero</td>
+<td>4200</td>
+</tr>
+
+<tr>
+<td>Honda</td>
+<td>3100</td>
+</tr>
+
+<tr>
+<td>Bajaj</td>
+<td>2400</td>
+</tr>
+
+<tr>
+<td>TVS</td>
+<td>1800</td>
+</tr>
+
+<tr>
+<td>Royal Enfield</td>
+<td>1000</td>
+</tr>
+
+</tbody></table>
+
+</div>
+
+<!-- Top Selling Bikes -->
+<div class="section">
+<h2>Top Selling Bike Models</h2>
+
+<table>
+
+<tbody><tr>
+<th>Bike Model</th>
+<th>Units Sold</th>
+</tr>
+
+<tr>
+<td>Hero Splendor Plus</td>
+<td>2200</td>
+</tr>
+
+<tr>
+<td>Honda Shine</td>
+<td>1800</td>
+</tr>
+
+<tr>
+<td>Bajaj Pulsar 125</td>
+<td>1500</td>
+</tr>
+
+<tr>
+<td>TVS Raider 125</td>
+<td>1300</td>
+</tr>
+
+<tr>
+<td>Royal Enfield Classic 350</td>
+<td>900</td>
+</tr>
+
+</tbody></table>
+
+</div>
+
+<script>
+
+const ctx = document.getElementById('salesChart');
+
+new Chart(ctx,{
+
+type:'line',
+
+data:{
+
+labels:['Jan','Feb','Mar','Apr','May','Jun'],
+
+datasets:[{
+
+label:'Bikes Sold',
+
+data:[1200,1500,1800,2100,2500,3400],
+
+borderColor:'blue',
+
+backgroundColor:'rgba(0,123,255,0.2)',
+
+fill:true,
+
+tension:0.4
+
+}]
+
+},
+
+options:{
+responsive:true
+}
+
+});
+
+</script>
+
+
+</body></html>
